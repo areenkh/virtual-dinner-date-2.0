@@ -1,0 +1,20 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe0f0; /* Light pink */
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff0f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff1493;
+  color: white;
+}
