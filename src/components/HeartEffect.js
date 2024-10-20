@@ -1,72 +1,103 @@
-// HeartEffect.js
-import React, { useEffect, useState } from 'react';
-import './HeartEffect.css'; // Ensure the CSS is in a separate file and imported
+import React, { useEffect } from 'react';
+import './HeartEffect.css'; // Make sure the CSS is correctly linked
 
 const HeartEffect = () => {
-  const [hearts, setHearts] = useState([]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [mouseDown, setMouseDown] = useState(false);
-
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setHearts(currentHearts =>
-        currentHearts.map(heart => ({
-          ...heart,
-          time: heart.time - 20,
-          y: heart.y - 0.5
-        })).filter(heart => heart.time > 0)
-      );
-    }, 20);
+    // Create a container for the hearts
+    const brd = document.createElement("DIV");
+    brd.style.position = 'fixed';
+    brd.style.top = '0';
+    brd.style.left = '0';
+    brd.style.width = '100vw';
+    brd.style.height = '100vh';
+    brd.style.pointerEvents = 'none'; // Allow mouse events to pass through
+    document.body.appendChild(brd);
 
-    return () => clearInterval(intervalId);
+    const hearts = [];
+    let down = false;
+    let event = null;
+
+    const generateHeart = (x, y, xBound, xStart, scale) => {
+      var heart = document.createElement("DIV");
+      heart.setAttribute('class', 'heart');
+      brd.appendChild(heart);
+      heart.style.left = `${x}px`;
+      heart.style.top = `${y}px`;
+      heart.style.transform = `scale(${scale})`;
+      heart.time = 3000; // duration of animation
+      heart.x = x;
+      heart.y = y;
+      heart.bound = xBound;
+      heart.direction = xStart;
+      hearts.push(heart);
+      return heart;
+    };
+
+    // Event handlers
+    const onMouseDown = (e) => {
+      down = true;
+      event = e;
+    };
+
+    const onMouseUp = () => {
+      down = false;
+    };
+
+    const onMouseMove = (e) => {
+      event = e;
+    };
+
+    const onTouchStart = (e) => {
+      down = true;
+      event = e.touches[0];
+    };
+
+    const onTouchEnd = () => {
+      down = false;
+    };
+
+    const onTouchMove = (e) => {
+      event = e.touches[0];
+    };
+
+    // Adding event listeners
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('touchstart', onTouchStart);
+    document.addEventListener('touchend', onTouchEnd);
+    document.addEventListener('touchmove', onTouchMove);
+
+    const frame = () => {
+      hearts.forEach((heart, i) => {
+        if (heart.time > 0) {
+          heart.time -= 16; // decrease time left
+          heart.y -= 0.5; // speed of heart moving up
+          heart.style.top = `${heart.y}px`;
+          heart.style.left = `${heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 100}px`;
+        } else {
+          heart.parentNode.removeChild(heart);
+          hearts.splice(i, 1);
+        }
+      });
+    };
+
+    const id = setInterval(frame, 16);
+
+    // Cleanup function
+    return () => {
+      clearInterval(id);
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mouseup', onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('touchstart', onTouchStart);
+      document.removeEventListener('touchend', onTouchEnd);
+      document.removeEventListener('touchmove', onTouchMove);
+      document.body.removeChild(brd); // Remove the hearts container
+    };
   }, []);
 
-  useEffect(() => {
-    if (mouseDown) {
-      const heart = {
-        x: mousePosition.x,
-        y: mousePosition.y,
-        time: 3000,
-        scale: Math.random() * 0.8 + 0.2,
-        bound: 30 + Math.random() * 20,
-        direction: 1 - Math.round(Math.random()) * 2
-      };
-      setHearts(currentHearts => [...currentHearts, heart]);
-    }
-  }, [mousePosition, mouseDown]);
-
-  const handleMouseMove = event => {
-    setMousePosition({ x: event.pageX, y: event.pageY });
-  };
-
-  const handleTouchMove = event => {
-    setMousePosition({ x: event.touches[0].pageX, y: event.touches[0].pageY });
-  };
-
-  return (
-    <div
-      onMouseMove={handleMouseMove}
-      onMouseDown={() => setMouseDown(true)}
-      onMouseUp={() => setMouseDown(false)}
-      onTouchStart={handleTouchMove}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={() => setMouseDown(false)}
-      style={{ position: 'relative', width: '100%', height: '100%' }}
-    >
-      {hearts.map((heart, index) => (
-        <div
-          key={index}
-          className="heart"
-          style={{
-            left: `${heart.x}px`,
-            top: `${heart.y}px`,
-            transform: `scale(${heart.scale})`,
-            opacity: Math.max(heart.time / 3000, 0)
-          }}
-        />
-      ))}
-    </div>
-  );
+  return null; // No need to return JSX, since we are manipulating the DOM directly
 };
 
 export default HeartEffect;

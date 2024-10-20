@@ -1,27 +1,31 @@
+@keyframes heartfade {
+  0% {
+    opacity : 1;
+  }
+  50% {
+    opacity : 0;
+  }
+}
 .heart {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-  }
-  
-  .heart:before,
-  .heart:after {
-    content: "";
-    background-color: #fc2a62;
-    position: absolute;
-    height: 30px;
-    width: 15px;
-    border-radius: 15px 15px 0 0;
-  }
-  
-  .heart:before {
-    transform: rotate(-45deg);
-    left: 7.5px;
-  }
-  
-  .heart:after {
-    transform: rotate(45deg);
-    right: 7.5px;
-  }
-  
+  z-index : 999;
+  animation : heartfade 6s linear;
+  position : absolute; 
+}
+.heart:before,
+.heart:after {
+  content : "";
+  background-color : #fc2a62;
+  position : absolute;
+  height : 30px;
+  width : 45px;
+  border-radius : 15px 0px 0px 15px;
+}
+
+.heart:before {
+  transform : rotate(45deg);
+}
+
+.heart:after {
+  left : 10.5px;
+  transform : rotate(135deg);
+}

@@ -5,6 +5,7 @@ import PositiveMessage from './PositiveMessage';
 import DateSelector from './DateSelector';
 import FoodSelector from './FoodSelector';
 import Confirmation from './Confirmation';
+import HeartEffect from './HeartEffect'; 
 
 function App() {
   const [stage, setStage] = useState('initial');
@@ -31,10 +32,11 @@ function App() {
 
   return (
     <div className="app">
+      <HeartEffect />
       {stage === 'initial' && <InitialQuestion onAnswer={handleAnswer} />}
       {stage === 'positiveMessage' && <PositiveMessage onNext={handlePositiveMessageNext} />}
       {stage === 'dateSelection' && <DateSelector onDateSet={handleDateSelection} onNext={() => setStage('foodSelection')} />}
-      {stage === 'foodSelection' && <FoodSelector onFoodSelect={handleFoodSelection} />}
+      {stage === 'foodSelection' && <FoodSelector onFoodSelect={handleFoodSelection} onNext={() => setStage('confirmation')} />}
       {stage === 'confirmation' && <Confirmation date={date} food={food} />}
     </div>
   );
