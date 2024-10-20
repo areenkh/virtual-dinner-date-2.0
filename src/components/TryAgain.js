@@ -1,10 +1,11 @@
 import React from 'react';
+import angryCat from '../images/angrycat.gif'; 
 
 function TryAgain({ onRetry }) {
   return (
     <div>
-      <h2>Oh no! 😿 Please reconsider! A virtual dinner date could be really fun!</h2>
-      <img src="path_to_sad_cat_gif.gif" alt="Sad Cat" />
+      <h2>Wrong Answer!</h2>
+      <img className="reaction" src={angryCat} alt="Angry Cat"/>
       <button onClick={onRetry}>Try Again</button>
     </div>
   );

@@ -1,12 +1,13 @@
 import React from 'react';
+import cutecat from '../images/cutecat.gif'; 
 
 function Confirmation({ date, food }) {
   return (
     <div>
-      <h2>Virtual Date Details</h2>
-      <p>We're all set for our virtual date! 🎉</p>
-      <p>We'll be enjoying a lovely evening on <strong>{date}</strong>, and we've got <strong>{food}</strong> on the menu!</p>
-      <img src="path_to_celebration_gif.gif" alt="Celebration" />
+      <h2>🌟✨ Date Night is All Set! ✨🌟</h2>
+      <p>We're going to have a virtual date on <strong>{date}</strong>! 🎉💖</p>
+      <p>Get reado for some yummy <strong>{food}</strong>! Let's make it a night to remember! (≧◡≦) ♡</p>
+      <img className="reaction" src={cutecat} alt="Cat Jumping"/>
     </div>
   );
 }

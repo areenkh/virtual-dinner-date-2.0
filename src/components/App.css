@@ -22,3 +22,11 @@
 .App-link {
   color: #61dafb;
 }
+
+.reaction {
+  width: 60%;   /* Adjust the width to desired percentage */
+  height: auto; /* Maintains the aspect ratio of the image */
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+  max-width: 200px; /* Sets a maximum width to ensure images don't get too large on smaller screens */
+}
