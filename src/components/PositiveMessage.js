@@ -5,7 +5,7 @@ function PositiveMessage({ onNext }) {
     <div>
       <h2>Yay! I'm so glad you said yes! 😺</h2>
       <img src="path_to_happy_cat_gif.gif" alt="Happy Cat" />
-      <button onClick={onNext}>Next</button>
+      <button onClick={onNext}>Next</button>  
     </div>
   );
 }

@@ -6,7 +6,7 @@ function InitialQuestion({ onAnswer }) {
   const [response, setResponse] = useState('ask');
 
   if (response === 'yes') {
-    return <PositiveMessage onNext={() => onAnswer()} />;
+    return <PositiveMessage onNext={onAnswer} />; // Pass onAnswer directly
   } else if (response === 'no') {
     return <TryAgain onRetry={() => setResponse('ask')} />;
   }
@@ -27,5 +27,6 @@ function InitialQuestion({ onAnswer }) {
     </div>
   );
 }
+
 
 export default InitialQuestion;

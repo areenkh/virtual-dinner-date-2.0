@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function DateSelector({ setDate, nextStep }) {
+function DateSelector({ onDateSet, onNext }) {
   const [localDate, setLocalDate] = useState('');
 
   const handleDateChange = (event) => {
@@ -12,8 +12,8 @@ function DateSelector({ setDate, nextStep }) {
       alert("Please select a date for our virtual dinner!");
       return;
     }
-    setDate(localDate);  // Pass the localDate to the parent component
-    nextStep();  // Proceed to the next step
+    onDateSet(localDate);  // Correctly use the passed prop to set date
+    onNext();  // Proceed to the next step
   };
 
   return (

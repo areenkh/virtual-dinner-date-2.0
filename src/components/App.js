@@ -1,24 +1,41 @@
 import React, { useState } from 'react';
+import './App.css';
 import InitialQuestion from './InitialQuestion';
+import PositiveMessage from './PositiveMessage';
 import DateSelector from './DateSelector';
 import FoodSelector from './FoodSelector';
 import Confirmation from './Confirmation';
 
 function App() {
-  const [step, setStep] = useState(0);
+  const [stage, setStage] = useState('initial');
   const [date, setDate] = useState('');
   const [food, setFood] = useState('');
 
-  const handleNextStep = () => {
-    setStep(step + 1);
+  const handleAnswer = () => {
+    setStage('positiveMessage');
+  };
+
+  const handlePositiveMessageNext = () => {
+    setStage('dateSelection');
+  };
+
+  const handleDateSelection = (selectedDate) => {
+    setDate(selectedDate);
+    setStage('foodSelection');
+  };
+
+  const handleFoodSelection = (selectedFood) => {
+    setFood(selectedFood);
+    setStage('confirmation');
   };
 
   return (
     <div className="app">
-      {step === 0 && <InitialQuestion onAnswer={handleNextStep} />}
-      {step === 1 && <DateSelector setDate={setDate} nextStep={handleNextStep} />}
-      {step === 2 && <FoodSelector setFood={setFood} nextStep={handleNextStep} />}
-      {step === 3 && <Confirmation date={date} food={food} />}
+      {stage === 'initial' && <InitialQuestion onAnswer={handleAnswer} />}
+      {stage === 'positiveMessage' && <PositiveMessage onNext={handlePositiveMessageNext} />}
+      {stage === 'dateSelection' && <DateSelector onDateSet={handleDateSelection} onNext={() => setStage('foodSelection')} />}
+      {stage === 'foodSelection' && <FoodSelector onFoodSelect={handleFoodSelection} />}
+      {stage === 'confirmation' && <Confirmation date={date} food={food} />}
     </div>
   );
 }

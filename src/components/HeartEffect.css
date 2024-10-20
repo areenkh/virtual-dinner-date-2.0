@@ -1,0 +1,27 @@
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+  }
+  
+  .heart:before,
+  .heart:after {
+    content: "";
+    background-color: #fc2a62;
+    position: absolute;
+    height: 30px;
+    width: 15px;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .heart:before {
+    transform: rotate(-45deg);
+    left: 7.5px;
+  }
+  
+  .heart:after {
+    transform: rotate(45deg);
+    right: 7.5px;
+  }
+  
