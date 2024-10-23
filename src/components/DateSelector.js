@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function DateSelector({ onDateSet, onNext }) {
-  const [localDate, setLocalDate] = useState('');
+  const [localDate, setLocalDate] = useState(new Date());
 
-  const handleDateChange = (event) => {
-    setLocalDate(event.target.value);
+  const handleDateChange = (date) => {
+    setLocalDate(date);
   };
 
   const handleNext = () => {
-    if (!localDate) {
-      alert("Please select a date for our virtual dinner!");
-      return;
-    }
-
-    // Use a more reliable method to get today's date
     const today = new Date();
-    const currentDate = today.toISOString().split('T')[0];
+    today.setHours(0, 0, 0, 0);  // Reset time part for accurate comparison
 
-    // Check if selected date is before today's date
-    if (localDate < currentDate) {
-      alert(`The date you selected (${localDate}) is in the past. Please choose today's date or later.`);
+    if (localDate < today) {
+      alert("Please select a date that is today or in the future.");
       return;
     }
 
-    onDateSet(localDate);  // Pass the selected date upstream
-    onNext();  // Go to the next step
+    onDateSet(localDate.toISOString().split('T')[0]);  // Format date to YYYY-MM-DD
+    onNext();
   };
 
   return (
     <div>
       <h2>Choose a date for our virtual dinner:</h2>
-      <input type="date" value={localDate} onChange={handleDateChange} />
+      <DatePicker
+        selected={localDate}
+        onChange={handleDateChange}
+        dateFormat="yyyy-MM-dd"
+        minDate={new Date()}  // Prevent past dates
+      />
       <button onClick={handleNext}>Next Up: Food Fun! (っ˘ڡ˘ς) 🍴</button>
     </div>
   );
