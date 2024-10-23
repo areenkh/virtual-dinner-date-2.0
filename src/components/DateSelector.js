@@ -13,21 +13,18 @@ function DateSelector({ onDateSet, onNext }) {
       return;
     }
 
-    // Get today's date in YYYY-MM-DD format
+    // Use a more reliable method to get today's date
     const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear();
-    const currentDate = yyyy + '-' + mm + '-' + dd;
+    const currentDate = today.toISOString().split('T')[0];
 
     // Check if selected date is before today's date
     if (localDate < currentDate) {
-      alert("Please select a date that is today or in the future.");
+      alert(`The date you selected (${localDate}) is in the past. Please choose today's date or later.`);
       return;
     }
 
-    onDateSet(localDate);  // Correctly use the passed prop to set date
-    onNext();  // Proceed to the next step
+    onDateSet(localDate);  // Pass the selected date upstream
+    onNext();  // Go to the next step
   };
 
   return (
