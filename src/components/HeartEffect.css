@@ -7,9 +7,9 @@
   }
 }
 .heart {
-  z-index : 999;
-  animation : heartfade 6s linear;
-  position : absolute; 
+  z-index: -1; /* Push the hearts behind the main content */
+  animation: heartfade 6s linear;
+  position: absolute; 
 }
 .heart:before,
 .heart:after {

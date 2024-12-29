@@ -1,22 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffe0f0; /* Light pink */
-    color: #333;
+    background-color: #4CAF50; /* Green for the background */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 50px;
-}
-
-button {
+  }
+  
+  button {
     margin: 10px;
     padding: 10px 20px;
-    background-color: #fff;
-    border: 2px solid #ff1493; /* Deep pink */
+    background-color: #FFFFFF; /* White button background */
+    border: 2px solid #D32F2F; /* Red border */
     border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #ff1493;
-    color: #fff;
-}
-
+    color: #000000; /* Black text for the button */
+  }
+  
+  button:hover {
+    background-color: #D32F2F; /* Red hover background */
+    color: #FFFFFF; /* White text on hover */
+  }
+  

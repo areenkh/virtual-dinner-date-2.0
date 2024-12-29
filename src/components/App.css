@@ -24,7 +24,7 @@
 }
 
 .reaction {
-  width: 60%;   /* Adjust the width to desired percentage */
+  width: 80%;   /* Adjust the width to desired percentage */
   height: auto; /* Maintains the aspect ratio of the image */
   display: block;
   margin: 0 auto; /* Centers the image horizontally */
