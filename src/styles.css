@@ -2,8 +2,14 @@ body {
     font-family: Arial, sans-serif;
     background-color: #4CAF50; /* Green for the background */
     color: #FFFFFF; /* White text */
-    text-align: center;
-    padding: 50px;
+    margin: 0; /* Remove default margins */
+    padding: 20px; /* Reduced padding for better alignment */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Align elements to the top */
+    min-height: 100vh; /* Ensure the body covers the full viewport height */
+    box-sizing: border-box; /* Include padding in element's width/height */
   }
   
   button {
@@ -14,10 +20,34 @@ body {
     border-radius: 5px;
     cursor: pointer;
     color: #000000; /* Black text for the button */
+    transition: all 0.3s ease; /* Smooth hover transition */
   }
   
   button:hover {
     background-color: #D32F2F; /* Red hover background */
     color: #FFFFFF; /* White text on hover */
+  }
+  
+  /* Add explicit styles for dropdowns */
+  select {
+    font-size: 1.2em; /* Larger text for readability */
+    padding: 10px 20px; /* Ensure enough space inside */
+    border-radius: 5px; /* Match button styles */
+    border: 2px solid #FFFFFF; /* White border */
+    background-color: #000000; /* Black background for dropdown */
+    color: #FFFFFF; /* White text for readability */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    margin: 20px 0; /* Spacing around dropdown */
+  }
+  
+  select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #D32F2F; /* Highlight with red border */
+  }
+  
+  /* Ensure the dropdown options are visible and styled */
+  option {
+    background-color: #FFFFFF; /* White background for options */
+    color: #000000; /* Black text for options */
   }
   

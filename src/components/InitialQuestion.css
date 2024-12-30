@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  .content {
+    text-align: center; /* Center text and buttons only */
+    margin-bottom: 20px; /* Add spacing below buttons */
+  }
+  
+  .text-content {
+    margin-bottom: 20px; /* Space between text and images */
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Align buttons horizontally */
+  }
+  
+  .images-row {
+    display: flex;
+    justify-content: center; /* Align images in a row */
+    gap: 15px; /* Add space between images */
+    margin-top: 20px; /* Space between buttons and images */
+  }
+  
+  .image-content {
+    text-align: center; /* Center captions below images */
+    max-width: 350px; /* Consistent size for all images */
+  }
+  
+  .styled-image {
+    width: 150px; /* Allow natural width */
+    max-width: 250px; /* Set a maximum width for the image */
+    height: 150px; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  
+  .styled-image:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .image-caption {
+    margin-top: 10px; /* Space between image and caption */
+    font-size: 14px; /* Caption font size */
+    color: #444; /* Subtle gray color */
+    font-style: italic; /* Makes the captions italic */
+  }
+  

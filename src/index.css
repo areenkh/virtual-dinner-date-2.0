@@ -5,8 +5,10 @@ body {
   text-align: center;
   height: 100vh; /* Full viewport height */
   display: flex;
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
+  flex-direction: column; /* Allow elements to stack vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  padding: 20px; /* Prevent elements from touching the edges */
 }
 
 button {
@@ -19,6 +21,7 @@ button {
   color: #FFFFFF; /* White text for contrast */
   border: none;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  cursor: pointer; /* Ensure buttons have a pointer cursor */
 }
 
 button:hover {
@@ -27,14 +30,15 @@ button:hover {
 }
 
 /* Enlarged input fields */
-input[type='date'] {
+select {
   font-size: 1.2em; /* Larger font size */
   padding: 10px 20px; /* More padding */
-  border-radius: 20px; /* Rounded borders */
+  border-radius: 10px; /* Rounded borders */
   border: 2px solid #4CAF50; /* Green border */
-  margin-top: 20px; /* Space from the preceding text */
   color: #000000; /* Black text for readability */
-  background-color: #FFFFFF; /* White background for input */
+  background-color: #FFFFFF; /* White background for dropdown */
+  cursor: pointer; /* Pointer cursor for dropdown */
+  margin-top: 20px; /* Space from preceding elements */
 }
 
 /* Container adjustments */
@@ -44,10 +48,18 @@ input[type='date'] {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.food-container, .date-container, .confirmation {
+.food-container,
+.date-container,
+.confirmation {
   animation: fadeIn 1s ease-out;
 }

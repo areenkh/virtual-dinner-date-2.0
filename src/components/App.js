@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import './App.css';
 import InitialQuestion from './InitialQuestion';
 import PositiveMessage from './PositiveMessage';
-import DateSelector from './DateSelector';
+import TimeSelector from './TimeSelector';
 import FoodSelector from './FoodSelector';
 import Confirmation from './Confirmation';
 import HeartEffect from './HeartEffect'; 
 import Footer from './Footer'; 
 
-
 function App() {
   const [stage, setStage] = useState('initial');
-  const [date, setDate] = useState('');
+  const [time, setTime] = useState(''); // Changed `date` to `time`
   const [food, setFood] = useState('');
 
   const handleAnswer = () => {
@@ -19,11 +18,11 @@ function App() {
   };
 
   const handlePositiveMessageNext = () => {
-    setStage('dateSelection');
+    setStage('timeSelection');
   };
 
-  const handleDateSelection = (selectedDate) => {
-    setDate(selectedDate);
+  const handleTimeSelection = (selectedTime) => {
+    setTime(selectedTime); // Set the selected time
     setStage('foodSelection');
   };
 
@@ -37,9 +36,13 @@ function App() {
       <HeartEffect />
       {stage === 'initial' && <InitialQuestion onAnswer={handleAnswer} />}
       {stage === 'positiveMessage' && <PositiveMessage onNext={handlePositiveMessageNext} />}
-      {stage === 'dateSelection' && <DateSelector onDateSet={handleDateSelection} onNext={() => setStage('foodSelection')} />}
-      {stage === 'foodSelection' && <FoodSelector onFoodSelect={handleFoodSelection} onNext={() => setStage('confirmation')} />}
-      {stage === 'confirmation' && <Confirmation date={date} food={food} />}
+      {stage === 'timeSelection' && (
+        <TimeSelector onTimeSet={handleTimeSelection} onNext={() => setStage('foodSelection')} />
+      )}
+      {stage === 'foodSelection' && (
+        <FoodSelector onFoodSelect={handleFoodSelection} onNext={() => setStage('confirmation')} />
+      )}
+      {stage === 'confirmation' && <Confirmation date={time} food={food} />} {/* Updated `date` to `time` */}
       <Footer />
     </div>
   );

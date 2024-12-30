@@ -21,8 +21,8 @@ app.post('/send-email', async (req, res) => {
     // Email content for the recipient
     const emailContentRecipient = `
         Hello,
-        You have selected ${food} for your virtual dinner date on ${date}.
-        Enjoy your meal!
+        This is a confirmation email that you have selected ${food} for our 1 year anniversary dinner date at ${date} on January 3.
+        I can't wait :3
     `;
 
     // Email content for the owner

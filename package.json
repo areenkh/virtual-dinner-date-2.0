@@ -51,13 +51,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/areenkh/virtual-dinner-date.git"
+    "url": "git+https://github.com/areenkh/virtual-dinner-date-2.0.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/areenkh/virtual-dinner-date/issues"
+    "url": "https://github.com/areenkh/virtual-dinner-date-2.0/issues"
   },
-  "homepage": "https://areenkh.github.io/virtual-dinner-date/",
+  "homepage": "https://areenkh.github.io/virtual-dinner-date-2.0/",
   "proxy": "http://localhost:5001"
 }

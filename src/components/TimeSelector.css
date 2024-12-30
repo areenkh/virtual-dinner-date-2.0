@@ -1,0 +1,77 @@
+.time-selector-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  .prompt {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .time-content {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between the radio buttons and image */
+    width: 100%;
+    max-width: 600px; /* Limit the total width of the content */
+    margin: 0 auto; /* Center the content */
+  }
+  
+  .radio-options {
+    flex: 1; /* Allow the radio buttons to take up available space */
+    display: flex;
+    flex-direction: column; /* Stack options vertically */
+    gap: 10px; /* Add space between radio buttons */
+    align-items: flex-start; /* Align radio buttons to the left */
+  }
+  
+  .radio-option {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between the radio button and text */
+  }
+  
+  input[type="radio"] {
+    accent-color: #4CAF50; /* Customize the radio button color */
+    transform: scale(1.2); /* Make the radio buttons slightly larger */
+  }
+  
+  .image-container {
+    display: flex; /* Align images in a row */
+    justify-content: center; /* Center the row within the parent container */
+    gap: 15px; /* Add spacing between images */
+    flex-wrap: wrap; /* Ensure images wrap if the container is too small */
+    margin-top: 20px; /* Add spacing above the image row */
+  }
+  
+  .image-content {
+    text-align: center; /* Center captions below the images */
+    max-width: 150px; /* Set a consistent size for all images */
+  }
+  
+  .styled-image {
+    width: 100%; /* Fit the image within its container */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .styled-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .image-caption {
+    margin-top: 10px; /* Add spacing between the image and caption */
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+  }
+  
+  
