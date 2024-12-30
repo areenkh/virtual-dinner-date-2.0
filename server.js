@@ -37,7 +37,7 @@ app.post('/send-email', async (req, res) => {
     const mailOptionsRecipient = {
         to: userEmails,
         from: process.env.EMAIL_USER, // Your verified sender email in SendGrid
-        subject: 'Your Virtual Dinner Date Details',
+        subject: 'Your Dinner Date Details',
         text: emailContentRecipient,
     };
 
