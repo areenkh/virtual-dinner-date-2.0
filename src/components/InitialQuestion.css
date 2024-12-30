@@ -30,13 +30,13 @@
   
   .image-content {
     text-align: center; /* Center captions below images */
-    max-width: 350px; /* Consistent size for all images */
+    max-width: 550px; /* Consistent size for all images */
   }
   
   .styled-image {
-    width: 150px; /* Allow natural width */
+    width: 550px; /* Allow natural width */
     max-width: 250px; /* Set a maximum width for the image */
-    height: 150px; /* Maintain aspect ratio */
+    height: 250px; /* Maintain aspect ratio */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
