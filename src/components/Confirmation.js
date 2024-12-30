@@ -18,7 +18,7 @@ function Confirmation({ date, food }) {
     useEffect(() => {
         const sendEmail = async () => {
             try {
-                const response = await fetch('https://virtual-dinner-date-2-0.onrender.com', {
+                const response = await fetch('https://virtual-dinner-date-2-0.onrender.com/send-email', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
