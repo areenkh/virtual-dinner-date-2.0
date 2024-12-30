@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './TimeSelector.css'; // Add a new CSS file for styling
-import palestineFlag from '../images/palestineFlag.png'; // Add your image path
+import palestineFlag from '../images/areen.png'; // Add your image path
 import secondPic from '../images/cafe.png';
 import thirdPic from '../images/cafe2.png';
 import fourthPic from '../images/japan.png';
