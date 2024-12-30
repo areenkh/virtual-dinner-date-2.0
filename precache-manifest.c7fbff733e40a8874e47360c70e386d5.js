@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c353d1ca1f019a19b8bd67326c245c3",
+    "revision": "994d2dc78f8f94d7465078657e23b5e2",
     "url": "/virtual-dinner-date-2.0/index.html"
   },
   {
-    "revision": "c8cbd4258b4822290cf0",
-    "url": "/virtual-dinner-date-2.0/static/css/main.848a47e8.chunk.css"
+    "revision": "7707af5351966459ff36",
+    "url": "/virtual-dinner-date-2.0/static/css/main.69ee61bb.chunk.css"
   },
   {
     "revision": "ef0d1f2efaa042d00f12",
     "url": "/virtual-dinner-date-2.0/static/js/2.a84fbe0a.chunk.js"
   },
   {
-    "revision": "c8cbd4258b4822290cf0",
-    "url": "/virtual-dinner-date-2.0/static/js/main.7d9b5772.chunk.js"
+    "revision": "7707af5351966459ff36",
+    "url": "/virtual-dinner-date-2.0/static/js/main.ddb8e385.chunk.js"
   },
   {
     "revision": "0a5140d928b30bd65eaf",
     "url": "/virtual-dinner-date-2.0/static/js/runtime~main.2c0291cc.js"
+  },
+  {
+    "revision": "cf68416bb622899e76bed9f58322dd7b",
+    "url": "/virtual-dinner-date-2.0/static/media/areen.cf68416b.png"
   },
   {
     "revision": "00b0f4d037300a2ebbb3115cb2818ccd",
@@ -86,10 +90,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f6d8b9d8984c12f7e4382901c6a83381",
     "url": "/virtual-dinner-date-2.0/static/media/nabil1.f6d8b9d8.png"
-  },
-  {
-    "revision": "45f77f858e38ce6ac63872a0b0ea5639",
-    "url": "/virtual-dinner-date-2.0/static/media/palestineFlag.45f77f85.png"
   },
   {
     "revision": "bf8d2005b7e9b04a3e0176c76b101fb7",
