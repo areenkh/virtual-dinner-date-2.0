@@ -26,7 +26,7 @@ function Confirmation({ date, food }) {
                     body: JSON.stringify({
                         date,
                         food,
-                        userEmail: ['areen.khalaila@gmail.com', 'areenkh@brandeis.edu'],
+                        userEmail: ['areen.khalaila@gmail.com', 'areenkh@brandeis.edu', 'noblehamideh98@gmail.com'],
                     }),
                 });
 
@@ -48,7 +48,7 @@ function Confirmation({ date, food }) {
             <h2>🇵🇸✨ Date Night is All Set! ✨🇵🇸</h2>
             <p>We're going to have a virtual date on <strong>{date}</strong>! 🎉💖</p>
             <p>Get ready for some yummy <strong>{food}</strong>! Let's make it a night to remember! (≧◡≦) ♡</p>
-            <p>You should have received a Confirmation email. Check you spam box, it's probably there.</p>
+            <p>Both of us should have received a Confirmation email. Check you spam box, it's probably there.</p>
             <img className="reaction" src={cutecat} alt="Cat Jumping" />
             <div className="images-row">
                 {images.map((img, index) => (
